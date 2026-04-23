@@ -149,7 +149,7 @@ p {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 2.5rem; 
+  top: .8rem; 
   left: 0.8rem; 
   width: calc(100% - 1.6rem); 
 background-color: #FBF9F4;
