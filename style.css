@@ -233,7 +233,6 @@ background-color: #1d1d1d;
 
 .projectCard {
   width: 65vw;
-  padding: 3rem;
 }
 
 .projectImage {
@@ -637,7 +636,7 @@ footer {
 
   .projectCard {
     width: 100%;
-    padding: 1.5rem 0.8rem;
+    padding: 0.8rem;
     overflow: hidden;
   }
 
