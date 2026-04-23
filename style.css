@@ -467,16 +467,22 @@ footer {
   gap: 1.5rem;
   text-align: center;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
 }
 
 .not-found p:first-child {
   font-family: 'acidBold', sans-serif;
-  font-size: 15vw;
+  color: #FBF9F4;
+  font-size: 12rem;
   line-height: 1;
 }
 
 .not-found h2 {
   font-family: 'acidBold', sans-serif;
+  color: #FBF9F4;
   font-size: 1.5rem;
   font-weight: normal;
 }
@@ -484,7 +490,7 @@ footer {
 .not-found a {
   font-family: 'albertusNova';
   font-size: .6rem;
-  color: black;
+  color: #FBF9F4;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
@@ -492,9 +498,13 @@ footer {
 .ripple-image404 {
   width: 100vw;
   height: 100vh;
-  background-image: url('images/.jpg');
+  background-image: url('images/lostImage.jpg');
   background-size: cover;
   background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /* CONTACT PAGE */
