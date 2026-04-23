@@ -234,6 +234,7 @@ p {
 
 .projectCard {
   width: 65vw;
+  padding: 1.5rem;
 }
 
 .projectImage {
