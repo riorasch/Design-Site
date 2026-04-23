@@ -737,7 +737,8 @@ footer {
     width: 30vw;
     padding: 0.8rem 0;
     align-self: flex-start;
-    color: #000000;
+    color: #000000 !important;
+    -webkit-appearance: none;
   }
 
 }
