@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js"></script>
+  <script src="
+https://unpkg.com/fit-text-webcomponent"></script>
+    </head>
+   
+    <body>
+       <!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <a id="lbCloseBtn" class="project-closebtn" onclick="event.stopPropagation(); closeLightbox()">&times;</a>
+  <span class="lb-prev" onclick="event.stopPropagation(); changeImage(-1)">‹</span>
+  <img id="lbImg" src="" alt="">
+  <span class="lb-next" onclick="event.stopPropagation(); changeImage(1)">›</span>
+</div>
+       
+        <!-- NAV BAR -->
+        <nav class="mainMenu">
+  <div class="logo">
+    <h4>Rio Rasch Design</h4>
+  </div>
+  <div class="navLinks">
+    <div class="subNavLinks">
+      <h4><a href="print.html">Print</a></h4>
+      <h4><a href="digital.html">Digital</a></h4>
+      <h4><a href="about.html">About</a></h4>
+      <h4><a href="contact.html">Contact</a></h4>
+    </div>
+  </div>
+  <a class="menuToggle" onclick="toggleMenu()">Menu</a>
+</nav>
+
+<div id="mobileMenu" class="mobile-menu">
+  <a class="menuClose" onclick="toggleMenu()">Close</a>
+  <div class="mobile-menu-links">
+    <div class="mobile-menu-row">
+      <h2><a href="print.html">Print</a></h2>
+      <h2><a href="digital.html">Digital</a></h2>
+      <h2><a href="about.html">About</a></h2>
+    </div>
+    <div class="mobile-menu-row">
+      <h2><a href="https://instagram.com/riorasch" target="_blank">Instagram</a></h2>
+      <h2><a href="contact.html">Contact</a></h2>
+    </div>
+  </div>
+</div>
+
+<div style="position: relative;">
+  <div class="ripple-image"></div>
+  <div class="hero-card">
+    <p class="caption">ANECDOTE CANDLES</p>
+    <h3>Holiday collection packaging</h3>
+  </div>
+</div>
+
+
+<!-- DESCRIPTION -->
+<section class="description">
+  <p class="caption">ABOUT ME</p>
+  <h2>My name is Rio and I am a passionate freelance Graphic Designer with American/German roots based in Los Angeles. My primary areas of focus and talent lies in logo creation, branding, editorial, packaging, and web design. My style is inspired by mindfulness, minimalism, Swiss design, and the natural world.</h2>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects">
+
+  <!-- YUUE -->
+  <div class="projectCard">
+  <p class="projectLabel">Website Wireframes</p>
+  <div class="projectImage image1" onclick="openProject()" style="cursor:pointer;"></div>
+  <p class="projectCaption">YUUE — DIGITAL, 2023</p>
+</div>
+
+<div id="projectNav" class="project-overlay">
+ <a id="overlayCloseBtn" href="javascript:void(0)" class="project-closebtn" onclick="closeProject()">&times;</a>
+  <div class="project-overlay-content">
+    <p class="project-label">Website Wireframes</p>
+   <div class="project-images-row">
+  <div class="project-image-small" onclick="openLightbox(0)" style="cursor:pointer; background-image:url('/images/projectA.png'); background-size:cover;"></div>
+  <div class="project-image-small" onclick="openLightbox(1)" style="cursor:pointer; background-image:url('/images/project2.jpg'); background-size:cover;"></div>
+  <div class="project-image-small" onclick="openLightbox(2)" style="cursor:pointer; background-image:url('/images/project3.jpg'); background-size:cover;"></div>
+</div>
+    <div class="thin-lineB"></div>
+    <p class="caption">DETAILS</p>
+    <h3 class="project-body">Praesent sit amet mauris tortor. Duis ac risus sem integer et placerat est, eu imperdiet neque. Proin sit amet purus metus. In nec efficitur justo, sed maximus est.</h3>
+  </div>
+</div>
+
+<!-- NEXT PROJECT -->
+
+    <div class="projectCard">
+    <p class="projectLabel">Website Wireframes</p>
+    <div class="projectImage image1"></div>
+    <p class="projectCaption">YUUE — Digital, 2023</p>
+  </div>
+  
+    <div class="projectCard">
+    <p class="projectLabel">Website Wireframes</p>
+    <div class="projectImage image1"></div>
+    <p class="projectCaption">YUUE — Digital, 2023</p>
+  </div>
+  </section>
+
+
+<div class="thin-line"></div>
+
+<!-- FOOTER -->
+<footer>
+    <nav class="footer-nav">
+   <h4><a>Based in Los Angeles</a></h4>
+    <h4><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></h4>
+    <h4><a href="contact.html">Contact</a></h4>
+  </nav>
+ <div class="container">
+  <fit-text class="logoBig"><strong>Rio Rasch</strong></fit-text>
+
+</footer>
+
+<!-- SCRIPTS -->
+ <script>
+// Mobile Menu 
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('active');
+}
+  // Ripple Effect
+    $(document).ready(function() {
+      $('.ripple-image').ripples({
+        resolution: 500,
+        dropRadius: 30,
+        perturbance: 0.02,
+        interactive: true
+      });
+    });
+
+// Nav color on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.mainMenu');
+  const hero = document.querySelector('.ripple-image');
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  if (heroBottom <= 0) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Overlay
+function openProject() {
+  const isMobile = window.innerWidth <= 768;
+  document.getElementById("projectNav").style.width = isMobile ? "100vw" : "50vw";
+  document.getElementById("overlayCloseBtn").style.display = "block";
+}
+
+function closeProject() {
+  document.getElementById("projectNav").style.width = "0";
+  document.getElementById("overlayCloseBtn").style.display = "none";
+}
+
+const lbImages = [
+    '/images/projectA.png',
+    '/images/project2.jpg',
+    '/images/project3.jpg'
+  ];
+
+  let lbCurrent = 0;
+
+ // Parallax
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.projectImage').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+    el.style.backgroundPosition = `center calc(50% + ${center * 0.1}px)`;
+    el.style.transform = `skewY(${center * 0.006}deg)`;
+  });
+});
+
+// Lightbox
+
+ function openLightbox(index) {
+  lbCurrent = index;
+  document.getElementById('lbImg').src = lbImages[lbCurrent];
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lbCloseBtn').style.display = 'block';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.getElementById('lbCloseBtn').style.display = 'none';
+}
+  function changeImage(dir) {
+    lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+    document.getElementById('lbImg').src = lbImages[lbCurrent];
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'ArrowLeft')  changeImage(-1);
+    if (e.key === 'Escape')     closeLightbox();
+  });
+   </script>
+
+ 
+
+    </body>
+</html>
