@@ -152,7 +152,7 @@ p {
   top: .8rem; 
   left: 0.8rem; 
   width: calc(100% - 1.6rem); 
-background-color: #FBF9F4;
+background-color: #1d1d1d;
   transform: none; 
   padding: 1rem;
   z-index: 10000;
@@ -160,6 +160,7 @@ background-color: #FBF9F4;
 
 .mobile-menu-links {
   display: flex;
+  color: #e0e0e0;
   flex-direction: column;
   gap: 1.5rem;
 }
@@ -176,6 +177,7 @@ background-color: #FBF9F4;
   cursor: pointer;
   font-family: acidMedium;
   font-size: 0.7rem;
+  color: #e0e0e0;
 }
 
 .menuClose,
@@ -183,7 +185,6 @@ background-color: #FBF9F4;
   font-family: acidMedium;
   font-size: .9rem;
   letter-spacing: -0.008em;
-  color: rgb(0, 0, 0);
 }
 
 
