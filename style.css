@@ -477,12 +477,6 @@ footer {
   background: transparent;
 }
 
-.not-found p:first-child {
-  font-family: 'acidBold', sans-serif;
-  color: #FBF9F4;
-  font-size: 12rem;
-  line-height: 1;
-}
 
 .not-found h2 {
   font-family: 'acidBold', sans-serif;
@@ -619,7 +613,7 @@ footer {
   .menuToggle { display: block; }
 
   /* Typography */
-  h2 { font-size: 1.7rem; }
+  h2 { font-size: 1.8rem; }
 
   /* Hero */
   .ripple-image {
