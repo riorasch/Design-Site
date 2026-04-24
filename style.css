@@ -494,6 +494,7 @@ footer {
   font-size: .6rem;
   color: #FBF9F4;
   text-decoration: none;
+    pointer-events: all;
   border-bottom: 1px solid currentColor;
 }
 
