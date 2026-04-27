@@ -133,7 +133,7 @@
       <!-- FOOTER -->
       <footer>
         <div class="container">
-          <fit-text class="logoBig"><strong>Rio Rasch</strong></fit-text>
+         <div class="logoBig">Rio Rasch</div>
           <nav class="footer-nav">
             <h4><a>Based in Los Angeles</a></h4>
             <h4><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></h4>
@@ -231,6 +231,21 @@
           if (e.key === 'Escape')     closeLightbox();
         });
 
+        // Big Logo
+        function fitText(el) {
+  let size = 10;
+  el.style.fontSize = size + 'px';
+  while (el.scrollWidth <= el.offsetWidth && size < 500) {
+    size++;
+    el.style.fontSize = size + 'px';
+  }
+  el.style.fontSize = (size - 1) + 'px';
+}
+
+document.querySelectorAll('.logoBig').forEach(fitText);
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.logoBig').forEach(fitText);
+});
       </script>
 
     </body>
